@@ -30,7 +30,7 @@ namespace ClientCMS.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Login", "Login");
         }
-        [Authorize]
+        
         public IActionResult DoctorInformation()
         {
             return View();
