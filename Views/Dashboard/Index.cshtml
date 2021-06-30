@@ -1,0 +1,30 @@
+﻿
+@Html.Partial("AfterLogin1")
+<style>
+    h2{text-align:center}
+   
+</style>
+<h2>Welcome @ViewBag.msg to Dashboard</h2>
+
+<div class="border-success">
+
+    <div class="col-md-3">
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="DoctorInformation"><div class="p-3 mb-2 bg-primary text-white">Doctor</div> </a>
+    </div>
+    <div class="col-md-3">
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="PatientInformation"><div class="p-3 mb-2 bg-secondary text-white">PatientInformation</div> </a>
+    </div>
+    <div class="col-md-3">
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="Appointment"><div class="p-3 mb-2 bg-success text-white">AppointmentInformation</div> </a>
+    </div>
+    <div class="col-md-3">
+
+        <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="UserInformation"><div class="p-3 mb-2 bg-success text-white">UserInformation</div> </a>
+    </div>
+
+</div>
+   
+

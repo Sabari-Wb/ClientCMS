@@ -1,0 +1,77 @@
+﻿@model ClientCMS.Models.DoctorClient
+
+@{
+    ViewData["Title"] = "DEdit";
+}
+@Html.Partial("AfterLogin2")
+<h1>Doctor Details Editing</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DoctorID" class="control-label"></label>
+                <input readonly asp-for="DoctorID" class="form-control" />
+                <span asp-validation-for="DoctorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-geoup">
+                <label asp-for="Sex" class="control-label"></label>
+                <div>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(model => model.Sex, "Male", new { @name = "sex" })
+                        Male
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(model => model.Sex, "Female", new { @name = "sex" })
+                        Female
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(model => model.Sex, "Others", new { @name = "sex" })
+                        Others
+                    </label>
+                    <div>
+                        @Html.ValidationMessageFor(model => model.Sex, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Specialization" class="control-label"></label>
+                <input asp-for="Specialization" class="form-control" />
+                <span asp-validation-for="Specialization" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VisitingHoursFROM" class="control-label"></label>
+                <input asp-for="VisitingHoursFROM" class="form-control" />
+                <span asp-validation-for="VisitingHoursFROM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VisitingHoursTO" class="control-label"></label>
+                <input asp-for="VisitingHoursTO" class="form-control" />
+                <span asp-validation-for="VisitingHoursTO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Getalldoctordetails">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
